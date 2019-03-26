@@ -5,4 +5,7 @@ import android.content.Context
 
 class CreateTripViewModel(val context: Context) : ViewModel() {
 
+    fun openPassengers(){
+
+    }
 }

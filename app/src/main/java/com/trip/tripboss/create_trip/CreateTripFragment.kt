@@ -1,11 +1,15 @@
 package com.trip.tripboss.create_trip
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.trip.tripboss.R
+import com.trip.tripboss.passengers.PassengersActivity
+import com.trip.tripboss.passengers.PassengersFragment
+import kotlinx.android.synthetic.main.fragment_create_trip.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,17 +38,16 @@ class CreateTripFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_create_trip, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        createTripButton.setOnClickListener({
+            startActivity(Intent(activity,PassengersActivity::class.java))
+        })
+    }
+
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateTripFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance() = CreateTripFragment()
     }
